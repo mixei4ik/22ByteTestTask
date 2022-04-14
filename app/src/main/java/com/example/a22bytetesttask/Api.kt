@@ -1,5 +1,6 @@
 package com.example.a22bytetesttask
 
+import com.example.a22bytetesttask.common.Constants.BASE_URL
 import com.example.a22bytetesttask.data.ApiData
 import com.example.a22bytetesttask.data.News
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ interface NewsApi {
 object NewsApiImpl {
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://newsapi.org")
+        .baseUrl(BASE_URL)
         .build()
 
     private val newsApiService = retrofit.create(NewsApi::class.java)
