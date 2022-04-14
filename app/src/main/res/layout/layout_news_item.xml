@@ -3,32 +3,74 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/item_margin"
+    android:layout_marginStart="@dimen/item_margin"
+    android:layout_marginEnd="@dimen/item_margin">
+
+    <TextView
+        android:id="@+id/news_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="14sp"
+        android:paddingStart="@dimen/text_padding"
+        android:paddingTop="@dimen/text_padding"
+        android:paddingEnd="@dimen/text_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/news_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="@string/title"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingStart="@dimen/text_padding"
+        android:paddingEnd="@dimen/text_padding"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/news_time" />
 
     <ImageView
         android:id="@+id/news_image"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/news_title"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/news_image" />
 
     <TextView
         android:id="@+id/news_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Content"
+        android:text="@string/content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:paddingStart="@dimen/text_padding"
+        android:paddingEnd="@dimen/text_padding"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/news_image" />
+
+    <TextView
+        android:id="@+id/news_url"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/url"
+        android:textSize="14sp"
+        android:paddingStart="@dimen/text_padding"
+        android:paddingEnd="@dimen/text_padding"
+        android:paddingBottom="@dimen/text_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

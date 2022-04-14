@@ -45,6 +45,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         with(holder.binding) {
             newsTitle.text = newsItem.title
             newsContent.text = newsItem.content
+            newsTime.text = newsItem.publishedAt
+            newsUrl.text = newsItem.url
             newsImage.load(newsItem.urlToImage) {
                 placeholder(R.drawable.ic_image)
                 error(R.drawable.ic_image)

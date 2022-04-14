@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    val newsViewModel by viewModels<NewsViewModel>()
+    private val newsViewModel by viewModels<NewsViewModel>()
     private lateinit var newsAdapter: NewsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

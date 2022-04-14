@@ -1,5 +1,6 @@
 package com.example.a22bytetesttask
 
+import com.example.a22bytetesttask.common.Constants.API_KEY
 import com.example.a22bytetesttask.common.Constants.BASE_URL
 import com.example.a22bytetesttask.data.ApiData
 import com.example.a22bytetesttask.data.News
@@ -8,10 +9,13 @@ import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface NewsApi {
-    @GET("/v2/everything?q=Apple&from=2022-04-14&sortBy=popularity&apiKey=9cdb1537a38b48cc8f7074a56c66d434")
-    suspend fun getListOfNews(): ApiData
+    @GET("/v2/everything?q=bitcoin")
+    suspend fun getListOfNews(
+        @Query("apiKey") key: String = API_KEY
+    ): ApiData
 }
 
 object NewsApiImpl {

@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
-class NewsViewModel: ViewModel() {
+class NewsViewModel : ViewModel() {
 
     private val _newsItems = MutableLiveData<Resource<List<News>>>()
     val newsItems: LiveData<Resource<List<News>>> = _newsItems
@@ -36,5 +36,4 @@ class NewsViewModel: ViewModel() {
             Resource.Error("Couldn't reach server. Check your internet connection")
         }
     }
-
 }
